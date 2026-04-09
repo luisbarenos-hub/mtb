@@ -1,1 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sección de Alertas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .alert-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .alert-section h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .alert-section .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .alert-success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            color: #155724;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            color: #721c24;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            color: #856404;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            color: #0c5460;
+        }
+
+        .alert-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-icon {
+            font-size: 20px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: inherit;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .close-btn:hover {
+            opacity: 1;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-error {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-warning {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .btn-info {
+            background: #17a2b8;
+            color: white;
+        }
+
+        .btn-alert {
+            background: #6c757d;
+            color: white;
+        }
+
+        .alert-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-section">
+        <h2>🚨 Sistema de Alertas</h2>
+        <p class="subtitle">Alertas dinámicas con diferentes estilos y tipos</p>
+        
+        <div id="alertContainer" class="alert-container"></div>
+        
+        <div class="button-group">
+            <button class="btn btn-success" onclick="showAlert('success')">
+                ✅ Éxito
+            </button>
+            <button class="btn btn-error" onclick="showAlert('error')">
+                ❌ Error
+            </button>
+            <button class="btn btn-warning" onclick="showAlert('warning')">
+                ⚠️ Advertencia
+            </button>
+            <button class="btn btn-info" onclick="showAlert('info')">
+                ℹ️ Información
+            </button>
+            <button class="btn btn-alert" onclick="showBrowserAlert()">
+                🖥️ Alerta del Navegador
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let alertId = 0;
+
+        function showAlert(type) {
+            const messages = {
+                success: {
+                    title: '¡Éxito!',
+                    message: 'La operación se completó correctamente.',
+                    icon: '✅'
+                },
+                error: {
+                    title: 'Error',
+                    message: 'Ha ocurrido un error en el proceso.',
+                    icon: '❌'
+                },
+                warning: {
+                    title: 'Advertencia',
+                    message: 'Por favor, revisa los datos ingresados.',
+                    icon: '⚠️'
+                },
+                info: {
+                    title: 'Información',
+                    message: 'Esta es una alerta informativa.',
+                    icon: 'ℹ️'
+                }
+            };
+
+            const alert = messages[type];
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.id = `alert-${alertId++}`;
+            
+            alertDiv.innerHTML = `
+                <div class="alert-content">
+                    <span class="alert-icon">${alert.icon}</span>
+                    <div>
+                        <strong>${alert.title}</strong><br>
+                        <small>${alert.message}</small>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="closeAlert('${alertDiv.id}')">×</button>
+            `;
+            
+            document.getElementById('alertContainer').appendChild(alertDiv);
+            
+            // Auto-cerrar después de 5 segundos
+            setTimeout(() => {
+                closeAlert(alertDiv.id);
+            }, 5000);
+        }
+
+        function closeAlert(alertId) {
+            const alert = document.getElementById(alertId);
+            if (alert) {
+                alert.style.animation = 'slideIn 0.3s ease-out reverse';
+                setTimeout(() => {
+                    alert.remove();
+                }, 300);
+            }
+        }
+
+        function showBrowserAlert() {
+            // Alerta simple del navegador
+            alert('¡Esta es una alerta del navegador!');
+            
+            // También podemos mostrar un prompt
+            const nombre = prompt('¿Cuál es tu nombre?', 'Visitante');
+            if (nombre) {
+                // Confirmación
+                const confirmacion = confirm(`Hola ${nombre}, ¿te gustan las alertas?`);
+                if (confirmacion) {
+                    showAlert('success');
+                    setTimeout(() => {
+                        alert(`¡Gracias ${nombre}! Me alegra que te gusten 😊`);
+                    }, 100);
+                } else {
+                    showAlert('info');
+                    setTimeout(() => {
+                        alert(`No te preocupes ${nombre}, las alertas son útiles para notificaciones importantes`);
+                    }, 100);
+                }
+            }
+        }
+
+        // Mostrar una alerta de bienvenida al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                showAlert('info');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
