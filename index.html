@@ -4,22 +4,16 @@
     <meta charset="UTF-8">
     <title>CinePro</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W9K25VLC');</script>
-    <!-- End Google Tag Manager -->
-    
+    </head>
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9K25VLC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-    
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9K25VLC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="navbar">
         <h1>CINE<span>PRO</span></h1>
     </header>
@@ -28,16 +22,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="hero-content">
             <h2>Cine ilimitado, <br>sin salir de casa.</h2>
             <p>La colección más grande de películas clásicas y estrenos.</p>
-            <a href="#contacto" class="btn-rojo">PRUÉBALO GRATIS</a>
+            <a href="#contacto" class="btn-rojo" onclick="dataLayer.push({'event': 'clic_prueba_gratis'});">PRUÉBALO GRATIS</a>
         </div>
     </section>
 
     <section class="beneficios">
-        <div class="caja">
+        <div class="caja" onclick="dataLayer.push({'event': 'ver_beneficio_4k'});">
             <h3>Resolucion 4K</h3>
             <p>La mejor resolución del mercado.</p>
         </div>
-        <div class="caja">
+        <div class="caja" onclick="dataLayer.push({'event': 'ver_beneficio_dispositivos'});">
             <h3>Multidispositivo</h3>
             <p>Mira en tu TV, Tablet o Celular al mismo tiempo.</p>
         </div>
@@ -50,11 +44,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="banner-rojo">
         <h2>Que esperas??</h2>
         <p>Únete a más de 10,000 cinéfilos hoy mismo.</p>
+        <button class="btn-rojo" onclick="dataLayer.push({'event': 'clic_banner_final'});" style="margin-top: 15px; cursor: pointer;">UNIRME AHORA</button>
     </section>
 
     <footer class="footer">
         <p>2026 CinePro. Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>
