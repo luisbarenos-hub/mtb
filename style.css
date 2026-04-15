@@ -1,1 +1,67 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; color: #333; }
 
+
+.navbar {
+    background-color: #000;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid #ff0000; }
+.navbar span { color: #ff0000; } 
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.hero h2 { font-size: 3rem; margin-bottom: 10px; }
+
+
+.btn-rojo {
+    background-color: #ff0000;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s; 
+}
+.btn-rojo:hover { background-color: #b30000; transform: scale(1.1); }
+
+
+.beneficios {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+.caja {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+}
+.caja h3 { color: #ff0000; margin-bottom: 10px; }
+
+
+.banner-rojo {
+    background-color: #ff0000;
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+
+.footer { background: #111; color: #777; padding: 20px; text-align: center; }
