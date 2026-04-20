@@ -1,66 +1,97 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Arial', sans-serif; color: #333; }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CinePro</title>
+    <link rel="stylesheet" href="style.css">
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W9K25VLC');</script>
+    <script src="https://t.contentsquare.net/uxa/fa9f43765b117.js"></script>
+</head>
+<body>
+    
+    <header class="navbar">
+        <h1>CINE<span>PRO</span></h1>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Lo mejor del cine <br>sin salir de tu casa.</h2>
+            <p>Todas tus peliculas al alcance de tu mano.</p>
+            <a href="" class="btn-rojo" onclick="dataLayer.push({'event': 'clicprueba'});">PRUEBA GRATIS</a>
+        </div>
+    </section>
+
+    <section class="beneficios">
+        <div class="caja" onclick="dataLayer.push({'event': 'clic4k'});" style="cursor:pointer;">
+            <h3>Resolucion 4K</h3>
+            <p>La mejor resolución del mercado.</p>
+        </div>
+        <div class="caja">
+            <h3>Multidispositivo</h3>
+            <p>Mira en tu TV, Tablet o Celular al mismo tiempo.</p>
+        </div>
+        <div class="caja">
+            <h3>Sin anuncios</h3>
+            <p>Tu película favorita sin interrupciones molestas.</p>
+        </div>
+    </section>
+
+    <section class="beneficios" style="background-color: #fff;">
+        <div class="hero-content" style="color: #333; text-align: center; width: 100%;">
+            <h2 style="color: #ff0000;">¿Cómo funciona?</h2>
+            <p>1. Regístrate</p>
+            <p>2. Elige tu plan</p>
+            <p>3. Disfruta</p>
+        </div>
+    </section>
+
+    <section class="beneficios">
+        <div class="caja">
+            <p>"Me encanta el catalogo de peliculas"</p>
+            <h3>Camilo Toloza</h3>
+        </div>
+        <div class="caja">
+            <p>"Sin salir de casa puedo ver las peliculas"</p>
+            <h3>Valentina Moya</h3>
+        </div>
+        <div class="caja">
+            <p>"Estan mis peliculas favoritas"</p>
+            <h3>Luis Bareño</h3>
+        </div>
 
 
-.navbar {
-    background-color: #000;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 3px solid #ff0000; }
-.navbar span { color: #ff0000; } 
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://www.teleadhesivo.com/blog/wp-content/uploads/2022/06/los-mejores-posters-de-pel%C3%ADculas-1024x640.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-}
-.hero h2 { font-size: 3rem; margin-bottom: 10px; }
+    </section>
 
+    <section class="banner-rojo">
+        <h2>¿Qué esperas??</h2>
+        <p>Únete a más de 10,000 cinéfilos hoy mismo.</p>
+        <button class="btn-rojo" onclick="dataLayer.push({'event': 'clicbanner'});" style="margin-top: 15px; cursor: pointer;">UNIRME AHORA</button>
+    </section>
 
-.btn-rojo {
-    background-color: #ff0000;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px; 
-    display: inline-block;
-    margin-top: 20px;
-    transition: 0.3s; 
-}
-.btn-rojo:hover { background-color: #b30000; transform: scale(1.1); }
+    <section class="beneficios" style="background-color: #fff; flex-direction: column; align-items: center;">
+        <h2 style="color: #ff0000; margin-bottom: 20px;">Preguntas Frecuentes</h2>
+        <div style="max-width: 600px; text-align: left;">
+            <p><strong>¿Es realmente gratis?</strong><br>Sí, los primeros 7 días son por nuestra cuenta.</p>
+            <br>
+            <p><strong>¿Hay permanencia?</strong><br>No, puedes cancelar cuando quieras.</p>
+            <button class="btn-rojo" onclick="dataLayer.push({'event': 'clicfaq'});" style="margin-top: 15px; cursor: pointer;">Ver Mas preguntas</button>
+        </div>
+    </section>
 
+    <section id="hubspot-form" class="beneficios" style="background-color: #eee;">
+        <div class="hero-content" style="color: #333; text-align: center;">
+            <h3>Regístrate para empezar</h3>
+            <p>(Aquí debes pegar el código que te dará HubSpot)</p>
+            </div>
+    </section>
 
-.beneficios {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-.caja {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
-}
-.caja h3 { color: #ff0000; margin-bottom: 10px; }
+    <footer class="footer">
+        <p>2026 CinePro. Todos los derechos reservados.</p>
+    </footer>
 
-
-.banner-rojo {
-    background-color: #ff0000;
-    color: white;
-    padding: 50px;
-    text-align: center;
-}
-
-
-.footer { background: #111; color: #777; padding: 20px; text-align: center; }
+</body>
+</html>
